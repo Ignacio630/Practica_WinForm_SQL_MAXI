@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto_app_discos", "Proyecto_app_discos\Proyecto_app_discos.csproj", "{3ECDAC26-CE63-4B76-93FD-FFEC7F6CB1E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.csproj", "{9DA101E0-D19E-476D-98B1-9A8D63FD6523}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLQuerys", "SQLQuerys\SQLQuerys.csproj", "{6D2294C9-B6D2-4492-AC91-AF592BED7A1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3ECDAC26-CE63-4B76-93FD-FFEC7F6CB1E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ECDAC26-CE63-4B76-93FD-FFEC7F6CB1E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ECDAC26-CE63-4B76-93FD-FFEC7F6CB1E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ECDAC26-CE63-4B76-93FD-FFEC7F6CB1E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DA101E0-D19E-476D-98B1-9A8D63FD6523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DA101E0-D19E-476D-98B1-9A8D63FD6523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DA101E0-D19E-476D-98B1-9A8D63FD6523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA101E0-D19E-476D-98B1-9A8D63FD6523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D2294C9-B6D2-4492-AC91-AF592BED7A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2294C9-B6D2-4492-AC91-AF592BED7A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2294C9-B6D2-4492-AC91-AF592BED7A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2294C9-B6D2-4492-AC91-AF592BED7A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
