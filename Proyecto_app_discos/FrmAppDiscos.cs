@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelos;
+using NegocioDiscografica;
 
 namespace Proyecto_app_discos
 {
@@ -21,8 +22,8 @@ namespace Proyecto_app_discos
 
         private void FrmAppDiscos_Load(object sender, EventArgs e)
         {
-            LecturaDiscos lecturaDiscos = new LecturaDiscos();
-            listaDiscos = lecturaDiscos.Listar();
+            Discografica discografica = new Discografica();
+            listaDiscos = discografica.listarDiscos();
             dgvDiscos.DataSource = listaDiscos;
             dgvDiscos.Columns["Url"].Visible = false;
             cargarImagen(listaDiscos[0].Url);
@@ -53,6 +54,12 @@ namespace Proyecto_app_discos
             { 
                 pbxTapaDisco.Load("https://static-00.iconduck.com/assets.00/image-not-found-02-icon-2048x2048-ij4lngoq.png");
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            FrmAgregarDisco agregarDisco = new FrmAgregarDisco();
+            agregarDisco.ShowDialog();
         }
     }
 }

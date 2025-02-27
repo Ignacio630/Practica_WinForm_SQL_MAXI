@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLQuerys", "SQLQuerys\SQLQuerys.csproj", "{6D2294C9-B6D2-4492-AC91-AF592BED7A1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NegocioDiscografica", "Discografica\NegocioDiscografica.csproj", "{450C6EB3-951D-435E-B92A-176ABC0DCCC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6D2294C9-B6D2-4492-AC91-AF592BED7A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D2294C9-B6D2-4492-AC91-AF592BED7A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D2294C9-B6D2-4492-AC91-AF592BED7A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450C6EB3-951D-435E-B92A-176ABC0DCCC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450C6EB3-951D-435E-B92A-176ABC0DCCC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450C6EB3-951D-435E-B92A-176ABC0DCCC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450C6EB3-951D-435E-B92A-176ABC0DCCC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

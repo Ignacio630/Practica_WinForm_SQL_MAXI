@@ -8,6 +8,7 @@ namespace Modelos
 {
     public class Estilos
     {
+        public int Id { get; set; }
         public string Descripcion { get; set; }
 
 

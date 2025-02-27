@@ -46,7 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LecturaDiscos.cs" />
+    <Compile Include="FrmAgregarDisco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarDisco.Designer.cs">
+      <DependentUpon>FrmAgregarDisco.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAppDiscos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAgregarDisco.resx">
+      <DependentUpon>FrmAgregarDisco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAppDiscos.resx">
       <DependentUpon>FrmAppDiscos.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,9 +89,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Discografica\NegocioDiscografica.csproj">
+      <Project>{450c6eb3-951d-435e-b92a-176abc0dccc8}</Project>
+      <Name>NegocioDiscografica</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modelos\Modelos.csproj">
       <Project>{9da101e0-d19e-476d-98b1-9a8d63fd6523}</Project>
       <Name>Modelos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLQuerys\SQLQuerys.csproj">
+      <Project>{6d2294c9-b6d2-4492-ac91-af592bed7a1a}</Project>
+      <Name>SQLQuerys</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
