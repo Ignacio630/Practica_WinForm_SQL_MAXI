@@ -77,12 +77,14 @@ namespace NegocioDiscografica
             try
             {
                 accesoDB.conectarDB("server=.\\SQLEXPRESS; database=DISCOS_DB; integrated security=true");
-                accesoDB.setConsultaDB("Select D.Titulo, D.CantidadCanciones, D.FechaLanzamiento, D.UrlImagenTapa, E.Descripcion as Estilos , T.Descripcion as Tipos from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and D.IdTipoEdicion = T.Id\r\n");
+                accesoDB.setConsultaDB("Select D.Id, D.Titulo, D.CantidadCanciones, D.FechaLanzamiento, D.UrlImagenTapa, E.Descripcion as Estilos , T.Descripcion as Tipos from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and D.IdTipoEdicion = T.Id\r\n");
                 accesoDB.ejecutarConsultaSelectDB();
 
                 while(accesoDB.Lector.Read())
                 {
                     Discos aux = new Discos();
+
+                    aux.Id = (int) accesoDB.Lector["Id"];
                     aux.Titulo = (string)accesoDB.Lector["Titulo"];
                     aux.Canciones = (int)accesoDB.Lector["CantidadCanciones"];
                     aux.FechaLanzamiento = (DateTime)accesoDB.Lector["FechaLanzamiento"];
@@ -108,6 +110,35 @@ namespace NegocioDiscografica
                 accesoDB.finalizarConexionDB();
             }
         }
+        public List<Discos> listarDiscosSimple()
+        {
+            List<Discos> discos = new List<Discos>();
+            DB accesoDb = new DB();
+
+            try
+            {
+                accesoDb.conectarDB();
+
+                accesoDb.setConsultaDB("Select Id, Titulo from Discos");
+                accesoDb.ejecutarConsultaSelectDB();
+
+                while (accesoDb.Lector.Read())
+                {
+                    Discos aux = new Discos();
+
+                    aux.Id = (int)accesoDb.Lector["Id"];
+                    aux.Titulo = (string)accesoDb.Lector["Titulo"];
+
+                    discos.Add(aux);
+                }
+
+                return discos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void agregarDisco(Discos nuevoDisco)
         {
             DB accesoDatos = new DB();
@@ -117,7 +148,7 @@ namespace NegocioDiscografica
                 accesoDatos.conectarDB("server=.\\SQLEXPRESS; database=DISCOS_DB; integrated security=true");
                 accesoDatos.setConsultaDB($"INSERT INTO DISCOS (Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, IdEstilo, IdTipoEdicion) VALUES ('{nuevoDisco.Titulo}', '{nuevoDisco.FechaLanzamiento:yyyy-MM-dd}', {nuevoDisco.Canciones}, '{nuevoDisco.Url}', {nuevoDisco.Estilo.Id}, {nuevoDisco.Edicion.Id})");
                 
-                accesoDatos.ejecutarConsultaInsertDB();
+                accesoDatos.ejecutarConsultaDB();
                 
             }
             catch (Exception ex)

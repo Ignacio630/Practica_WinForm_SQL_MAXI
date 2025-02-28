@@ -50,7 +50,7 @@ namespace SQLQuerys
                 throw ex;
             }
         }
-        public void ejecutarConsultaInsertDB()
+        public void ejecutarConsultaDB()
         {
             comando.Connection = conexion;
             try

@@ -37,9 +37,7 @@ namespace Proyecto_app_discos
                 nuevoDisco.Canciones = int.Parse(tbxCantCanciones.Text);
                 nuevoDisco.FechaLanzamiento = dtpFechaLanzamiento.Value;
                 nuevoDisco.Estilo = (Estilos) cmbEstilo.SelectedItem;
-                nuevoDisco.Edicion = (Edicion) cmbEdicion.SelectedItem;
-                MessageBox.Show($"{nuevoDisco.Titulo}',{nuevoDisco.FechaLanzamiento},{nuevoDisco.Canciones},'{nuevoDisco.Url}',{nuevoDisco.Estilo.Id}, {nuevoDisco.Edicion.Id}");
-
+                nuevoDisco.Edicion = (Edicion)cmbEdicion.SelectedItem;
 
                 discografica.agregarDisco(nuevoDisco);
                 this.Close();

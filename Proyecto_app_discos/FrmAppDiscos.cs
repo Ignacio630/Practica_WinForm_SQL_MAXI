@@ -18,6 +18,7 @@ namespace Proyecto_app_discos
         public FrmAppDiscos()
         {
             InitializeComponent();
+
         }
 
         private void FrmAppDiscos_Load(object sender, EventArgs e)
@@ -26,8 +27,6 @@ namespace Proyecto_app_discos
             listaDiscos = discografica.listarDiscos();
             dgvDiscos.DataSource = listaDiscos;
             dgvDiscos.Columns["Url"].Visible = false;
-            cargarImagen(listaDiscos[0].Url);
-
         }
 
         private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
@@ -60,6 +59,12 @@ namespace Proyecto_app_discos
         {
             FrmAgregarDisco agregarDisco = new FrmAgregarDisco();
             agregarDisco.ShowDialog();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            FrmEliminarDisco eliminarDisco = new FrmEliminarDisco();
+            eliminarDisco.ShowDialog();
         }
     }
 }
