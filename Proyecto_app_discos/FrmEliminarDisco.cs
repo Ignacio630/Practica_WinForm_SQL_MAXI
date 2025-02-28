@@ -18,6 +18,7 @@ namespace Proyecto_app_discos
         public FrmEliminarDisco()
         {
             InitializeComponent();
+
         }
 
         private void FrmEliminarDisco_Load(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace Proyecto_app_discos
                 Discos aux = new Discos();
                 accesoDb.conectarDB();
                 aux = (Discos)cbxDiscos.SelectedItem;
-                while (aux != null)
+                if(aux != null)
                 {
                     accesoDb.setConsultaDB($"delete from DISCOS where Titulo = '{aux.Titulo}'");
                     accesoDb.ejecutarConsultaDB();

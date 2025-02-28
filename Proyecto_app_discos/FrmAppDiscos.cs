@@ -23,12 +23,16 @@ namespace Proyecto_app_discos
 
         private void FrmAppDiscos_Load(object sender, EventArgs e)
         {
+            cargar_datos();
+        }
+        private void cargar_datos()
+        {
             Discografica discografica = new Discografica();
             listaDiscos = discografica.listarDiscos();
             dgvDiscos.DataSource = listaDiscos;
+            dgvDiscos.Refresh();
             dgvDiscos.Columns["Url"].Visible = false;
         }
-
         private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -58,13 +62,23 @@ namespace Proyecto_app_discos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmAgregarDisco agregarDisco = new FrmAgregarDisco();
+            agregarDisco.FormClosed += new FormClosedEventHandler(this.AgregarDisco_FormClosed);
             agregarDisco.ShowDialog();
+        }
+        private void AgregarDisco_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargar_datos();
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             FrmEliminarDisco eliminarDisco = new FrmEliminarDisco();
+            eliminarDisco.FormClosed += new FormClosedEventHandler(this.EliminarForm_FormClosed);
             eliminarDisco.ShowDialog();
+        }
+        private void EliminarForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargar_datos();
         }
     }
 }
